@@ -25,8 +25,8 @@ public class ArraySortDemo {
 
         Student[] students = {
                 new Student(2, "Max", "Mustermann"),
-                new Student(1, "Susi", "Sorglos"),
-                new Student(3, "John", "Doe"),
+                new Student(Integer.MAX_VALUE, "Susi", "Sorglos"),
+                new Student(-4, "John", "Doe"),
         };
         Arrays.sort(students);
         System.out.println(Arrays.toString(students));
