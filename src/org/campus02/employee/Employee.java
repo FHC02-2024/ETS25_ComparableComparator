@@ -1,21 +1,21 @@
 package org.campus02.employee;
 
-public class Employee {
+public class Employee implements Comparable<Employee> {
 
-    private int empNubmer;
+    private int empNumber;
     private String name;
     private double salary;
     private String department;
 
     public Employee(int empNubmer, String name, double salary, String department) {
-        this.empNubmer = empNubmer;
+        this.empNumber = empNubmer;
         this.name = name;
         this.salary = salary;
         this.department = department;
     }
 
-    public int getEmpNubmer() {
-        return empNubmer;
+    public int getEmpNumber() {
+        return empNumber;
     }
 
     public String getName() {
@@ -34,10 +34,24 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "empNubmer=" + empNubmer +
+                "empNubmer=" + empNumber +
                 ", name='" + name + '\'' +
                 ", salary=" + salary +
                 ", department='" + department + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+//        if (this.empNumber < o.empNumber) {
+//            return -1;
+//        }
+//        if (this.empNumber > o.empNumber) {
+//            return 1;
+//        }
+//        return 0;
+
+        // descending nach empNumber
+        return Integer.compare(o.empNumber, this.empNumber);
     }
 }

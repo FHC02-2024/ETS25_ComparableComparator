@@ -14,5 +14,8 @@ public class EmployeeSortDemo {
                 new Employee(1, "max", 2_500, "Marketing")
         };
         System.out.println(Arrays.toString(employees));
+
+        Arrays.sort(employees);
+        System.out.println(Arrays.toString(employees));
     }
 }
