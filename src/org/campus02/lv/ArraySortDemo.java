@@ -30,5 +30,8 @@ public class ArraySortDemo {
         };
         Arrays.sort(students);
         System.out.println(Arrays.toString(students));
+        Arrays.sort(students, new StudentLastFirstNameComparator());
+
+        Arrays.sort(students, ((o1, o2) -> Integer.compare(o1.getMatrNr(), o2.getMatrNr())));
     }
 }

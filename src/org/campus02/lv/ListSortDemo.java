@@ -2,6 +2,7 @@ package org.campus02.lv;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class ListSortDemo {
 
@@ -28,5 +29,23 @@ public class ListSortDemo {
         Collections.sort(students);
         System.out.println(students);
 
+        students.sort(new StudentLastFirstNameComparator());
+        System.out.println(students);
+
+        // anonyme Klasse
+        students.sort(new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return o1.getLastName().compareTo(o2.getLastName());
+            }
+        });
+        System.out.println(students);
+
+        // lambda Expression
+        students.sort((o1, o2) -> o2.getLastName().compareTo(o1.getLastName()));
+
+        // Method Reference
+        students.sort(Comparator.comparing(Student::getFirstName)
+                                .thenComparingInt(Student::getMatrNr));
     }
 }
